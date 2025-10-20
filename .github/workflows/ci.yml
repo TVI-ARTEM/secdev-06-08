@@ -44,6 +44,7 @@ jobs:
           echo "::add-mask::$SECRET_KEY"
           echo "SECRET_KEY=$SECRET_KEY" >> "$GITHUB_ENV"
           echo "SECRET_KEY_SOURCE=$source" >> "$GITHUB_ENV"
+          echo "SECRET_KEY_LENGTH=${#SECRET_KEY}" >> "$GITHUB_ENV"
 
       - name: Pre-commit checks
         run: pre-commit run --all-files
